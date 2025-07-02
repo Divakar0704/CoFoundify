@@ -141,22 +141,60 @@ export const workspaces = [
     members: ["user1", "user2"],
     status: "Active",
     createdAt: "2025-01-16",
+    milestones: [
+      {
+        id: "milestone1",
+        title: "MVP Development",
+        description: "Complete the minimum viable product",
+        dueDate: "2025-03-01",
+        status: "In Progress",
+        progress: 65
+      },
+      {
+        id: "milestone2",
+        title: "Beta Testing",
+        description: "Launch beta version with select restaurants",
+        dueDate: "2025-04-15",
+        status: "Planned",
+        progress: 0
+      }
+    ],
     tasks: [
       {
         id: "task1",
         title: "Design reusable container system",
+        description: "Create specifications for eco-friendly containers",
         assignedTo: "user2",
         status: "In Progress",
         priority: "High",
-        dueDate: "2025-01-25"
+        dueDate: "2025-01-25",
+        estimatedHours: 40,
+        actualHours: 25,
+        milestoneId: "milestone1"
       },
       {
         id: "task2", 
         title: "Develop mobile app MVP",
+        description: "Build core features for customer app",
         assignedTo: "user1",
         status: "Todo",
         priority: "High",
-        dueDate: "2025-02-01"
+        dueDate: "2025-02-01",
+        estimatedHours: 120,
+        actualHours: 0,
+        milestoneId: "milestone1"
+      },
+      {
+        id: "task3",
+        title: "Restaurant partnership outreach",
+        description: "Contact and onboard initial restaurant partners",
+        assignedTo: "user2",
+        status: "Completed",
+        priority: "Medium",
+        dueDate: "2025-01-20",
+        estimatedHours: 30,
+        actualHours: 35,
+        milestoneId: "milestone1"
       }
     ],
     resources: [
@@ -167,6 +205,32 @@ export const workspaces = [
         url: "#",
         uploadedBy: "user1",
         uploadedAt: "2025-01-16"
+      },
+      {
+        id: "resource2",
+        name: "Container Design Mockups",
+        type: "design",
+        url: "#",
+        uploadedBy: "user2",
+        uploadedAt: "2025-01-18"
+      }
+    ],
+    timeline: [
+      {
+        id: "event1",
+        title: "Project Kickoff",
+        description: "Initial team meeting and project planning",
+        date: "2025-01-16",
+        type: "meeting",
+        participants: ["user1", "user2"]
+      },
+      {
+        id: "event2",
+        title: "First Restaurant Partnership",
+        description: "Signed agreement with Green Bites Restaurant",
+        date: "2025-01-20",
+        type: "milestone",
+        participants: ["user2"]
       }
     ]
   },
@@ -179,17 +243,119 @@ export const workspaces = [
     members: ["user3", "user4"],
     status: "Active",
     createdAt: "2025-01-12",
+    milestones: [
+      {
+        id: "milestone3",
+        title: "Platform Launch",
+        description: "Launch the platform in 3 rural districts",
+        dueDate: "2025-05-01",
+        status: "In Progress",
+        progress: 30
+      }
+    ],
     tasks: [
       {
-        id: "task3",
+        id: "task4",
         title: "Conduct rural community outreach",
+        description: "Visit villages and understand employment needs",
         assignedTo: "user4",
         status: "In Progress",
         priority: "Medium",
-        dueDate: "2025-01-30"
+        dueDate: "2025-01-30",
+        estimatedHours: 60,
+        actualHours: 20,
+        milestoneId: "milestone3"
+      },
+      {
+        id: "task5",
+        title: "Develop skill verification system",
+        description: "Create system to verify and rate worker skills",
+        assignedTo: "user3",
+        status: "Todo",
+        priority: "High",
+        dueDate: "2025-02-15",
+        estimatedHours: 80,
+        actualHours: 0,
+        milestoneId: "milestone3"
       }
     ],
-    resources: []
+    resources: [
+      {
+        id: "resource3",
+        name: "Rural Employment Survey",
+        type: "document",
+        url: "#",
+        uploadedBy: "user4",
+        uploadedAt: "2025-01-14"
+      }
+    ],
+    timeline: [
+      {
+        id: "event3",
+        title: "Project Planning Session",
+        description: "Defined project scope and timeline",
+        date: "2025-01-12",
+        type: "meeting",
+        participants: ["user3", "user4"]
+      }
+    ]
+  },
+  {
+    id: "workspace3",
+    name: "MediTrack Innovation Lab",
+    description: "Healthcare analytics development workspace",
+    ideaId: "idea3",
+    ownerId: "user4",
+    members: ["user4", "user3", "user1"],
+    status: "Planning",
+    createdAt: "2025-01-10",
+    milestones: [
+      {
+        id: "milestone4",
+        title: "Research Phase Completion",
+        description: "Complete market research and technical feasibility study",
+        dueDate: "2025-02-28",
+        status: "In Progress",
+        progress: 45
+      }
+    ],
+    tasks: [
+      {
+        id: "task6",
+        title: "Healthcare regulations research",
+        description: "Study compliance requirements for health data",
+        assignedTo: "user4",
+        status: "In Progress",
+        priority: "High",
+        dueDate: "2025-02-01",
+        estimatedHours: 50,
+        actualHours: 20,
+        milestoneId: "milestone4"
+      },
+      {
+        id: "task7",
+        title: "ML model architecture design",
+        description: "Design machine learning models for health predictions",
+        assignedTo: "user3",
+        status: "Todo",
+        priority: "High",
+        dueDate: "2025-02-15",
+        estimatedHours: 70,
+        actualHours: 0,
+        milestoneId: "milestone4"
+      }
+    ],
+    resources: [],
+    timeline: [
+      {
+        id: "event4",
+        title: "Team Formation",
+        description: "Assembled core development team",
+        date: "2025-01-10",
+        type: "milestone",
+        participants: ["user4", "user3", "user1"]
+      }
+    ]
   }
 ];
 
