@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Calendar, CheckCircle, Clock, AlertCircle, FileText, Settings } from 'lucide-react';
+import { Users, Calendar, CheckCircle, Clock, AlertCircle, FileText, Settings, Video, Phone } from 'lucide-react';
 import { users } from '../data/sampleData';
 
 const WorkspaceCard = ({ workspace }) => {
@@ -42,12 +42,26 @@ const WorkspaceCard = ({ workspace }) => {
               {workspace.status}
             </span>
           </div>
-          <Link
-            to={`/workspace/${workspace.id}/settings`}
-            className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            <Settings className="h-5 w-5" />
-          </Link>
+          <div className="flex items-center space-x-1">
+            <button
+              className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+              title="Start Voice Call"
+            >
+              <Phone className="h-4 w-4" />
+            </button>
+            <button
+              className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              title="Start Video Call"
+            >
+              <Video className="h-4 w-4" />
+            </button>
+            <Link
+              to={`/workspace/${workspace.id}/settings`}
+              className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <Settings className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         {/* Members */}
